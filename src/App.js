@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import { Route, Switch } from 'react-router-dom';
+import Posts from './components/Posts';
+import Post from './components/Post';
+import Todo from './components/Todo';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <div className="App">
+            <Switch>
+                <Route path="/" exact component={Posts} />
+                <Route path="/posts" component={Posts} />
+                <Route path="/todo" component={Todo} />
+                <Route path="/post/:id" component={Post} />
+            </Switch>
+        </div>
+    );
 }
 
 export default App;

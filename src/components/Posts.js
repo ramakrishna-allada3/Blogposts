@@ -1,5 +1,5 @@
 import React from 'react';
-import BlogCard from './BlogCard';
+import FlexCard from './FlexCard';
 import { Spinner, Button } from 'react-bootstrap';
 import axios from 'axios';
 import Header from './Header';
@@ -21,6 +21,7 @@ const Posts = () => {
             setPosts(response.data);
             setIsLoading(false);
         });
+        document.title = 'Blogposts - Posts';
     }, [])
 
     return (
@@ -33,7 +34,7 @@ const Posts = () => {
                 isLoading ? <div className='spinner-container'><Spinner animation="border" role="status">
                     <span className="visually-hidden">Loading...</span>
                 </Spinner></div> : <div className='blogposts'>
-                    {posts.map(post => <BlogCard id={post.id} title={post.title} body={post.body} clickable={true} />)}
+                    {posts.map(post => <FlexCard id={post.id} title={post.title} body={post.body} clickable={true} />)}
                 </div>
             }
         </>

@@ -2,7 +2,7 @@ import  { Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useHistory } from "react-router-dom";
 
-const BlogCard = (props) => {
+const FlexCard = (props) => {
     const history = useHistory();
 
     function onClick() {
@@ -23,4 +23,4 @@ const BlogCard = (props) => {
     );
 }
 
-export default BlogCard;
+export default FlexCard;

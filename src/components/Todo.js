@@ -18,6 +18,8 @@ const Todo = () => {
             setTodos(response.data);
             setIsLoading(false);
         });
+
+        document.title = 'Todo';
     }, []);
 
     return (<>

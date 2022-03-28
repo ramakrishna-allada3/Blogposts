@@ -3,7 +3,7 @@ import Header from "./Header";
 import React from 'react';
 import { useParams } from "react-router-dom";
 import { Container, Spinner } from "react-bootstrap";
-import BlogCard from "./BlogCard";
+import FlexCard from "./FlexCard";
 
 const Post = () => {
 
@@ -20,6 +20,8 @@ const Post = () => {
                 setIsLoading(false);
             });
         });
+
+        document.title = 'Blogposts - comments';
     }, [])
 
 
@@ -31,11 +33,11 @@ const Post = () => {
                     isLoading ? <div className='spinner-container'><Spinner animation="border" role="status">
                         <span className="visually-hidden">Loading...</span>
                     </Spinner></div> : <div style={{marginTop: '50px'}}>
-                        <BlogCard width='100%' id={id} title={post.title} body={post.body} clickable={false} />
+                        <FlexCard width='100%' id={id} title={post.title} body={post.body} clickable={false} />
                         <div className="comments-container border">
                             <h6> {comments.length} Comments </h6>
                             {
-                                comments.map(comment => <BlogCard width='100%' id={id} title={comment.name} body={comment.body} clickable={false} />)
+                                comments.map(comment => <FlexCard width='100%' id={id} title={comment.name} body={comment.body} clickable={false} />)
                             }
                         </div>
                     </div>
